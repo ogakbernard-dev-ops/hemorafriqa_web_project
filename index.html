@@ -534,8 +534,17 @@ nav {
   }
   .about-img {
     border-radius: 20px; overflow: hidden; height: 420px;
-    background: url('images/about.jpeg') center/cover;
+    background: #e8e8ef;
     position: relative;
+  }
+  .about-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    position: absolute;
+    inset: 0;
   }
   .about-img::after {
     content: ''; position: absolute; inset: 0;
@@ -947,19 +956,23 @@ nav {
   .client-chip {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.55rem 1.4rem;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 50px;
-    white-space: nowrap;
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: rgba(255,255,255,0.55);
+    justify-content: center;
+    width: 150px;
+    height: 70px;
+    background: transparent;
+    border: none;
     flex-shrink: 0;
-    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    opacity: 0.55;
+    transition: opacity 0.25s;
+    padding: 0 0.5rem;
   }
-  .client-chip:hover { background: rgba(245,166,35,0.08); border-color: rgba(245,166,35,0.3); color: var(--white); }
+  .client-chip:hover { opacity: 1; }
+  .client-chip img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
   @keyframes scrollClients {
     0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); }
@@ -1160,28 +1173,27 @@ nav {
     <div class="clients-strip-label">Trusted by organisations across Kenya</div>
     <div class="clients-scroll-wrap">
       <div class="clients-track">
-        <div class="client-chip">🏥 Kenyatta Hospital</div>
-        <div class="client-chip">🏫 University of Nairobi</div>
-        <div class="client-chip">🏦 KCB Group</div>
-        <div class="client-chip">⛪ PCEA Church</div>
-        <div class="client-chip">🎓 Strathmore University</div>
-        <div class="client-chip">🏢 Safaricom PLC</div>
-        <div class="client-chip">🎙️ Radio Citizen</div>
-        <div class="client-chip">💼 Kenya Red Cross</div>
-        <div class="client-chip">🌍 UN Environment</div>
-        <div class="client-chip">🏛️ County Government</div>
-        <div class="client-chip">🎤 East Africa DJs</div>
-        <div class="client-chip">🏥 Kenyatta Hospital</div>
-        <div class="client-chip">🏫 University of Nairobi</div>
-        <div class="client-chip">🏦 KCB Group</div>
-        <div class="client-chip">⛪ PCEA Church</div>
-        <div class="client-chip">🎓 Strathmore University</div>
-        <div class="client-chip">🏢 Safaricom PLC</div>
-        <div class="client-chip">🎙️ Radio Citizen</div>
-        <div class="client-chip">💼 Kenya Red Cross</div>
-        <div class="client-chip">🌍 UN Environment</div>
-        <div class="client-chip">🏛️ County Government</div>
-        <div class="client-chip">🎤 East Africa DJs</div>
+        <div class="client-chip"><img src="images/clients/client1.png" alt="Client 1"></div>
+        <div class="client-chip"><img src="images/clients/client2.png" alt="Client 2"></div>
+        <div class="client-chip"><img src="images/clients/client3.png" alt="Client 3"></div>
+        <div class="client-chip"><img src="images/clients/client4.png" alt="Client 4"></div>
+        <div class="client-chip"><img src="images/clients/client5.png" alt="Client 5"></div>
+        <div class="client-chip"><img src="images/clients/client6.png" alt="Client 6"></div>
+        <div class="client-chip"><img src="images/clients/client7.png" alt="Client 7"></div>
+        <div class="client-chip"><img src="images/clients/client8.png" alt="Client 8"></div>
+        <div class="client-chip"><img src="images/clients/client9.png" alt="Client 9"></div>
+        <div class="client-chip"><img src="images/clients/client10.png" alt="Client 10"></div>
+        <!-- duplicate for seamless loop -->
+        <div class="client-chip"><img src="images/clients/client1.png" alt="Client 1"></div>
+        <div class="client-chip"><img src="images/clients/client2.png" alt="Client 2"></div>
+        <div class="client-chip"><img src="images/clients/client3.png" alt="Client 3"></div>
+        <div class="client-chip"><img src="images/clients/client4.png" alt="Client 4"></div>
+        <div class="client-chip"><img src="images/clients/client5.png" alt="Client 5"></div>
+        <div class="client-chip"><img src="images/clients/client6.png" alt="Client 6"></div>
+        <div class="client-chip"><img src="images/clients/client7.png" alt="Client 7"></div>
+        <div class="client-chip"><img src="images/clients/client8.png" alt="Client 8"></div>
+        <div class="client-chip"><img src="images/clients/client9.png" alt="Client 9"></div>
+        <div class="client-chip"><img src="images/clients/client10.png" alt="Client 10"></div>
       </div>
     </div>
   </div>
@@ -1391,7 +1403,6 @@ nav {
       <a href="#" class="btn-secondary" onclick="showPage('contact');return false;">Contact Us</a>
     </div>
   </div>
-
 </div><!-- /HOME PAGE -->
 
 
@@ -1467,6 +1478,16 @@ nav {
       </div>
     </div>
   </section>
+
+  <div style="background:var(--light-bg);padding:2rem 5rem 3rem;">
+    <div class="custom-pkg">
+      <div>
+        <h3>Need a Custom Package? 🎯</h3>
+        <p>Don't see exactly what you need? We build bespoke packages tailored precisely to your event, budget, and vision.</p>
+      </div>
+      <a href="#" class="btn-primary" onclick="showPage('quote');return false;" style="white-space:nowrap">Request Custom Quote <span style="font-size:0.7em;vertical-align:middle;opacity:0.9;">▼</span></a>
+    </div>
+  </div>
 </div><!-- /ABOUT -->
 
 
@@ -1547,6 +1568,16 @@ nav {
       </div>
     </div>
   </section>
+
+  <div style="background:var(--light-bg);padding:2rem 5rem 3rem;">
+    <div class="custom-pkg">
+      <div>
+        <h3>Need a Custom Package? 🎯</h3>
+        <p>Don't see exactly what you need? We build bespoke packages tailored precisely to your event, budget, and vision.</p>
+      </div>
+      <a href="#" class="btn-primary" onclick="showPage('quote');return false;" style="white-space:nowrap">Request Custom Quote <span style="font-size:0.7em;vertical-align:middle;opacity:0.9;">▼</span></a>
+    </div>
+  </div>
 </div><!-- /GALLERY -->
 
 
@@ -1705,6 +1736,9 @@ nav {
       </div>
     </div>
 
+  </section>
+
+  <div style="background:var(--light-bg);padding:2rem 5rem 3rem;">
     <div class="custom-pkg">
       <div>
         <h3>Need a Custom Package? 🎯</h3>
@@ -1712,7 +1746,7 @@ nav {
       </div>
       <a href="#" class="btn-primary" onclick="showPage('quote');return false;" style="white-space:nowrap">Request Custom Quote <span style="font-size:0.7em;vertical-align:middle;opacity:0.9;">▼</span></a>
     </div>
-  </section>
+  </div>
 </div><!-- /PACKAGES -->
 
 
@@ -1808,6 +1842,16 @@ nav {
     <h2 style="font-size:1.8rem;font-weight:900;margin-bottom:0.6rem">Ready to Join Our Happy Clients?</h2>
     <p style="color:var(--text-light);font-size:0.9rem;margin-bottom:2rem">Let's create your success story together.</p>
     <a href="#" class="btn-primary" onclick="showPage('contact');return false;">Get Started Today</a>
+  </div>
+
+  <div style="background:var(--light-bg);padding:2rem 5rem 3rem;">
+    <div class="custom-pkg">
+      <div>
+        <h3>Need a Custom Package? 🎯</h3>
+        <p>Don't see exactly what you need? We build bespoke packages tailored precisely to your event, budget, and vision.</p>
+      </div>
+      <a href="#" class="btn-primary" onclick="showPage('quote');return false;" style="white-space:nowrap">Request Custom Quote <span style="font-size:0.7em;vertical-align:middle;opacity:0.9;">▼</span></a>
+    </div>
   </div>
 </div><!-- /TESTIMONIALS -->
 
@@ -1911,78 +1955,21 @@ nav {
       </div>
     </div>
   </section>
+
+  <div style="background:var(--light-bg);padding:2rem 5rem 3rem;">
+    <div class="custom-pkg">
+      <div>
+        <h3>Need a Custom Package? 🎯</h3>
+        <p>Don't see exactly what you need? We build bespoke packages tailored precisely to your event, budget, and vision.</p>
+      </div>
+      <a href="#" class="btn-primary" onclick="showPage('quote');return false;" style="white-space:nowrap">Request Custom Quote <span style="font-size:0.7em;vertical-align:middle;opacity:0.9;">▼</span></a>
+    </div>
+  </div>
 </div><!-- /CONTACT -->
 
 
-<!-- ===== FOOTER ===== -->
-<footer class="site-footer">
-  <div class="footer-top">
-<div class="footer-brand">
-  <a href="#" class="nav-logo-link footer-logo-link" onclick="showPage('home');return false;">
-    <img src="images/logo.svg" alt="hemor_afriqa_logo" class="nav-logo-img">
-  </a>
 
-  <p>
-    Your trusted partner for premium events and branded merchandise in Nairobi, Kenya.
-    Excellence delivered, every time.
-  </p>
-<div class="footer-socials">
-  <a class="social-btn" href="https://bit.ly/hemorafriqaltd" target="_blank" title="Facebook">
-    <img src="images/facebook.png" alt="Facebook" />
-  </a>
-
-  <a class="social-btn" href="https://bit.ly/HemorAfriqaIG" target="_blank" title="Instagram">
-    <img src="images/instagram.png" alt="Instagram" />
-  </a>
-
-  <a class="social-btn" href="https://bit.ly/HemorAfriqaTiktok" target="_blank" title="TikTok">
-    <img src="images/tiktok.png" alt="TikTok" />
-  </a>
-
-  <a class="social-btn" href="https://wa.me/254715043810" target="_blank" title="WhatsApp">
-    <img src="images/whatsapp.png" alt="WhatsApp" />
-  </a>
-</div>
-    </div>
-    <div class="footer-col">
-      <h4>Events</h4>
-      <ul>
-        <li onclick="showPage('home');switchMode('events')">Sound System</li>
-        <li onclick="showPage('home');switchMode('events')">Tent Hire</li>
-        <li onclick="showPage('home');switchMode('events')">Seats & Tables</li>
-        <li onclick="showPage('home');switchMode('events')">Stage & Lighting</li>
-        <li onclick="showPage('home');switchMode('events')">MC & DJ Services</li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Branding</h4>
-      <ul>
-        <li onclick="showPage('home');switchMode('branding')">Corporate Merch</li>
-        <li onclick="showPage('home');switchMode('branding')">Personal Merch</li>
-        <li onclick="showPage('home');switchMode('branding')">Screen Printing</li>
-        <li onclick="showPage('home');switchMode('branding')">Embroidery</li>
-        <li onclick="showPage('home');switchMode('branding')">Gift Sets</li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <ul>
-        <li onclick="showPage('about')">About Us</li>
-        <li onclick="showPage('gallery')">Gallery</li>
-        <li onclick="showPage('packages')">Packages</li>
-        <li onclick="showPage('testimonials')">Testimonials</li>
-        <li onclick="showPage('contact')">Contact Us</li>
-        <li onclick="showPage('profile')" style="color:var(--orange);font-weight:700;">📄 Company Profile</li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 Hemor Afriqa Ltd. All rights reserved. | Designed and Developed by <a rel="nofollow" href="https://wa.me/254702118611" target="_blank" style="color:var(--orange);text-decoration:none;">Creative Bay | +254 702 118 611</a></p>
-    <p>Events & Branding Excellence · Nairobi, Kenya</p>
-  </div>
-</footer>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   let currentMode = 'events';
   let mobileNavOpen = false;
 
@@ -2337,6 +2324,17 @@ nav {
       </form>
     </div>
   </section>
+
+
+  <div style="background:var(--light-bg);padding:2rem 5rem 3rem;">
+    <div class="custom-pkg">
+      <div>
+        <h3>Need a Custom Package? 🎯</h3>
+        <p>Don't see exactly what you need? We build bespoke packages tailored precisely to your event, budget, and vision.</p>
+      </div>
+      <a href="#" class="btn-primary" onclick="showPage('quote');return false;" style="white-space:nowrap">Request Custom Quote <span style="font-size:0.7em;vertical-align:middle;opacity:0.9;">▼</span></a>
+    </div>
+  </div>
 </div><!-- /QUOTE PAGE -->
 
 <!-- ============================================================ -->
@@ -2362,8 +2360,8 @@ nav {
           <h2 style="font-size:2rem;font-weight:900;margin-bottom:0.8rem;">Hemor Afriqa Ltd<br><span style="color:var(--orange)">Company Profile</span></h2>
           <p style="color:rgba(255,255,255,0.6);font-size:0.95rem;line-height:1.7;max-width:500px;margin-bottom:1.5rem;">A comprehensive overview of who we are, what we do, and how we can make your next event or branding project extraordinary. 8+ years of excellence in one document.</p>
           <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-            <a href="hemor-afriqa-company-profile.pdf" download class="btn-primary" style="text-decoration:none;" onclick="trackDownload('PDF')">📄 Download PDF</a>
-            <a href="hemor-afriqa-company-profile.pdf" target="_blank" class="btn-secondary" style="border-color:rgba(255,255,255,0.3);color:#fff;text-decoration:none;">👁️ Preview Online</a>
+            <a href="documents/profile.pdf" download="Hemor-Afriqa-Company-Profile.pdf" class="btn-primary" style="text-decoration:none;" onclick="trackDownload('PDF')">📄 Download PDF</a>
+            <a href="documents/profile.pdf" target="_blank" class="btn-secondary" style="border-color:rgba(255,255,255,0.3);color:#fff;text-decoration:none;">👁️ Preview Online</a>
           </div>
         </div>
         <div style="text-align:center;flex-shrink:0;">
@@ -2428,7 +2426,7 @@ nav {
           <div style="font-size:1.5rem;margin-bottom:0.7rem;">📧</div>
           <h4 style="font-size:1rem;font-weight:800;color:var(--text-dark);margin-bottom:0.4rem;">Email Us the Profile</h4>
           <p style="font-size:0.85rem;color:var(--text-gray);line-height:1.6;margin-bottom:1rem;">Prefer we send it directly to your inbox? Drop your email and we'll send it along with our current offers.</p>
-          <a href="/cdn-cgi/l/email-protection#234a4d454c634b464e4c514245514a52420d404c4e1c505641494640571e73514c454a4f460371465256465057" class="btn-primary" style="text-decoration:none;font-size:0.85rem;padding:0.7rem 1.4rem;">Request via Email</a>
+          <a href="/cdn-cgi/l/email-protection#0e676068614e666b63617c6f687c677f6f206d6163317d7b6c646b6d7a335e7c616867626b2e5c6b7f7b6b7d7a" class="btn-primary" style="text-decoration:none;font-size:0.85rem;padding:0.7rem 1.4rem;">Request via Email</a>
         </div>
         <div style="background:var(--white);border-radius:16px;padding:2rem;box-shadow:0 2px 16px rgba(0,0,0,0.06);">
           <div style="font-size:1.5rem;margin-bottom:0.7rem;">💬</div>
@@ -2437,3 +2435,22 @@ nav {
           <a href="https://wa.me/254715043810?text=Hi!%20I'd%20like%20to%20receive%20the%20Hemor%20Afriqa%20Company%20Profile." target="_blank" class="btn-primary" style="text-decoration:none;font-size:0.85rem;padding:0.7rem 1.4rem;background:#25D366;box-shadow:0 4px 20px rgba(37,211,102,0.3);">WhatsApp Request</a>
         </div>
  
+      </div>
+    </div>
+  </section>
+
+
+
+  <div style="background:var(--light-bg);padding:2rem 5rem 3rem;">
+    <div class="custom-pkg">
+      <div>
+        <h3>Need a Custom Package? 🎯</h3>
+        <p>Don't see exactly what you need? We build bespoke packages tailored precisely to your event, budget, and vision.</p>
+      </div>
+      <a href="#" class="btn-primary" onclick="showPage('quote');return false;" style="white-space:nowrap">Request Custom Quote <span style="font-size:0.7em;vertical-align:middle;opacity:0.9;">▼</span></a>
+    </div>
+  </div>
+</div><!-- /PROFILE PAGE -->
+
+</body>
+</html>
