@@ -98,8 +98,8 @@ nav {
   color: var(--orange);
 }
 .mode-toggle {
-    display: flex; background: var(--navy2);
-    border: 1px solid var(--border); border-radius: 50px; padding: 4px; position: relative;
+    display: flex; background: var(--orange);
+    border: 1px solid var(--orange-dark); border-radius: 50px; padding: 4px; position: relative;
   }
   .toggle-pill {
     position: absolute; top: 4px; left: 4px;
@@ -113,8 +113,8 @@ nav {
     position: relative; z-index: 2;
     display: flex; align-items: center; gap: 0.4rem;
     padding: 0.5rem 1.2rem; border: none; background: transparent;
-    color: var(--text-light); font-family: 'Inter', sans-serif;
-    font-size: 0.88rem; font-weight: 600; cursor: pointer; border-radius: 50px;
+    color: var(--navy); font-family: 'Inter', sans-serif;
+    font-size: 0.88rem; font-weight: 700; cursor: pointer; border-radius: 50px;
     transition: color 0.25s; white-space: nowrap;
   }
   .toggle-btn.active { color: var(--white); }
@@ -760,15 +760,13 @@ nav {
   .map-info h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem; }
   .map-info p { color: var(--text-light); font-size: 0.90rem; }
 
-  .whatsapp-float {
-    position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
-    width: 56px; height: 56px; background: #25D366; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.5rem; box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-    cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
-    text-decoration: none;
+  .whatsapp-link-icon {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    text-decoration: none; color: #25D366; font-weight: 600;
+    transition: opacity 0.2s;
   }
-  .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+  .whatsapp-link-icon:hover { opacity: 0.8; }
+  .whatsapp-link-icon img { width: 28px; height: 28px; display: block; }
 
   /* ===== FOOTER ===== */
   .site-footer {
@@ -781,12 +779,15 @@ nav {
   .footer-brand p { color: var(--text-light); font-size: 0.84rem; line-height: 1.7; max-width: 280px; }
   .footer-socials { display: flex; gap: 0.6rem; margin-top: 1rem; }
   .social-btn {
-    width: 36px; height: 36px; background: rgba(255,255,255,0.06); border-radius: 8px;
-    display: flex; align-items: center; justify-content: center; font-size: 0.9rem;
-    cursor: pointer; transition: background 0.2s;
+    width: 36px; height: 36px; background: transparent; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: transform 0.2s;
     text-decoration: none; color: var(--white);
   }
-  .social-btn:hover { background: rgba(245,166,35,0.2); }
+  .social-btn img {
+    width: 30px; height: 30px; object-fit: contain;
+  }
+  .social-btn:hover { background: transparent; transform: translateY(-2px); }
   .footer-col h4 { font-size: 0.90rem; font-weight: 700; margin-bottom: 1rem; color: var(--white); letter-spacing: 0.05em; text-transform: uppercase; }
   .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
   .footer-col ul li {
@@ -1077,13 +1078,12 @@ nav {
 </head>
 <body>
 
-<!-- WhatsApp Float -->
-<a class="whatsapp-float" href="https://wa.me/254715043810" target="_blank" title="Chat on WhatsApp">💬</a>
-
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo-link" onclick="showPage('home');return false;">
     <img src="images/logo.svg" alt="Logo" class="nav-logo-img"></a>
+
+  <span style="font-size:1.38rem;font-weight:900;color:#00AEEF;letter-spacing:0.04em;white-space:nowrap;align-self:center;text-shadow:0 0 12px rgba(0,174,239,0.35);">HAMOR AFRIQA LTD</span>
 
   <div class="nav-center">
     <div class="nav-links">
@@ -1146,7 +1146,7 @@ nav {
         <p class="hero-sub" id="heroSub">Premium event solutions — from immersive sound and staging to elegant tents and MC services, crafted with expertise and executed with excellence.</p>
         <div class="hero-btns">
           <a href="#" class="btn-primary" id="heroBtn1" onclick="showPage('packages');return false;">Explore Packages ↓</a>
-          <a href="#" class="btn-secondary" onclick="showPage('contact');return false;">Get a Quote</a>
+          <a href="#" class="btn-secondary" onclick="showPage('quote');return false;">Get a Quote</a>
         </div>
       </div>
 <div class="hero-image-wrap"> 
@@ -1306,6 +1306,19 @@ nav {
             <p class="card-desc">Experienced MCs and DJs with a wide music selection — delivering seamless program coordination and crowd engagement.</p>
             <div class="card-section-label">What We Offer</div>
             <ul class="card-list"><li>Professional MCs for smooth event flow</li><li>DJs with local & international music</li><li>Crowd engagement & program management</li></ul>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-card-img" style="background-image:url('images/events/roadshow.jpg')">
+            <div class="event-card-img-overlay"></div>
+            <div class="event-card-header"><div class="card-icon-box">🚐</div><div><div class="card-label">On-the-Move Marketing</div><div class="card-title">Roadshow Caravans</div></div></div>
+          </div>
+          <div class="event-card-body">
+            <p class="card-desc">Fully equipped mobile roadshow caravans that take your brand directly to your audience — delivering high-impact activations across multiple locations.</p>
+            <div class="card-section-label">What's Included</div>
+            <ul class="card-list"><li>Branded mobile caravan units</li><li>Built-in sound system & LED screens</li><li>Generators & full power setup</li></ul>
+            <div class="card-section-label">Ideal For</div>
+            <ul class="card-list"><li>Product launches & brand activations</li><li>Political campaigns & community outreach</li><li>Multi-city tours & experiential marketing</li></ul>
           </div>
         </div>
       </div>
@@ -1479,15 +1492,6 @@ nav {
     </div>
   </section>
 
-  <div style="background:var(--light-bg);padding:2rem 5rem 3rem;">
-    <div class="custom-pkg">
-      <div>
-        <h3>Need a Custom Package? 🎯</h3>
-        <p>Don't see exactly what you need? We build bespoke packages tailored precisely to your event, budget, and vision.</p>
-      </div>
-      <a href="#" class="btn-primary" onclick="showPage('quote');return false;" style="white-space:nowrap">Request Custom Quote <span style="font-size:0.7em;vertical-align:middle;opacity:0.9;">▼</span></a>
-    </div>
-  </div>
 </div><!-- /ABOUT -->
 
 
@@ -1569,15 +1573,6 @@ nav {
     </div>
   </section>
 
-  <div style="background:var(--light-bg);padding:2rem 5rem 3rem;">
-    <div class="custom-pkg">
-      <div>
-        <h3>Need a Custom Package? 🎯</h3>
-        <p>Don't see exactly what you need? We build bespoke packages tailored precisely to your event, budget, and vision.</p>
-      </div>
-      <a href="#" class="btn-primary" onclick="showPage('quote');return false;" style="white-space:nowrap">Request Custom Quote <span style="font-size:0.7em;vertical-align:middle;opacity:0.9;">▼</span></a>
-    </div>
-  </div>
 </div><!-- /GALLERY -->
 
 
@@ -1738,15 +1733,6 @@ nav {
 
   </section>
 
-  <div style="background:var(--light-bg);padding:2rem 5rem 3rem;">
-    <div class="custom-pkg">
-      <div>
-        <h3>Need a Custom Package? 🎯</h3>
-        <p>Don't see exactly what you need? We build bespoke packages tailored precisely to your event, budget, and vision.</p>
-      </div>
-      <a href="#" class="btn-primary" onclick="showPage('quote');return false;" style="white-space:nowrap">Request Custom Quote <span style="font-size:0.7em;vertical-align:middle;opacity:0.9;">▼</span></a>
-    </div>
-  </div>
 </div><!-- /PACKAGES -->
 
 
@@ -1844,15 +1830,6 @@ nav {
     <a href="#" class="btn-primary" onclick="showPage('contact');return false;">Get Started Today</a>
   </div>
 
-  <div style="background:var(--light-bg);padding:2rem 5rem 3rem;">
-    <div class="custom-pkg">
-      <div>
-        <h3>Need a Custom Package? 🎯</h3>
-        <p>Don't see exactly what you need? We build bespoke packages tailored precisely to your event, budget, and vision.</p>
-      </div>
-      <a href="#" class="btn-primary" onclick="showPage('quote');return false;" style="white-space:nowrap">Request Custom Quote <span style="font-size:0.7em;vertical-align:middle;opacity:0.9;">▼</span></a>
-    </div>
-  </div>
 </div><!-- /TESTIMONIALS -->
 
 
@@ -1879,21 +1856,22 @@ nav {
         <div class="contact-card">
           <div class="contact-card-icon">💬</div>
           <h4>WhatsApp</h4>
-          <p><a class="whatsapp-float" 
-   href="https://wa.me/254715043810" 
-   target="_blank" 
-   title="Chat on WhatsApp">
-</a><br>+254 715 043810</p>
+          <p>
+            <a class="whatsapp-link-icon" href="https://wa.me/254715043810" target="_blank" title="Chat on WhatsApp">
+              <img src="images/social/whatsapp.png" alt="WhatsApp">
+              +254 715 043810
+            </a>
+          </p>
         </div>
         <div class="contact-card">
           <div class="contact-card-icon">✉️</div>
           <h4>Email Us</h4>
 		  <p>
-  <a href="/cdn-cgi/l/email-protection#791c0f1c170d0a39111c14160b181f0b100818571a1657121c" style="color: var(--orange); font-weight:600; text-decoration:none;">
-   <span class="__cf_email__" data-cfemail="aecbd8cbc0daddeec6cbc3c1dccfc8dcc7dfcf80cdc180c5cb">[email&#160;protected]</span>
+  <a href="/cdn-cgi/l/email-protection#a5cccbc3cae5cdc0c8cad7c4c3d7ccd4c48bc6cac8" style="color: var(--orange); font-weight:600; text-decoration:none;">
+   <span class="__cf_email__" data-cfemail="553c3b333a153d30383a273433273c24347b363a38">[email&#160;protected]</span>
   </a></br>
-  <a href="/cdn-cgi/l/email-protection#543626353a303d3a33143c31393b263532263d25357a373b7a3f31" style="color: var(--orange); font-weight:600; text-decoration:none;">
-   <span class="__cf_email__" data-cfemail="650717040b010c0b02250d00080a170403170c14044b060a4b0e00">[email&#160;protected]</span>
+  <a href="/cdn-cgi/l/email-protection#4e2b382b203a3d0e262b23213c2f283c273f2f602d2123" style="color: var(--orange); font-weight:600; text-decoration:none;">
+   <span class="__cf_email__" data-cfemail="345142515a4047745c51595b465552465d45551a575b59">[email&#160;protected]</span>
   </a>
 </p>
         </span></a></p>
@@ -1956,15 +1934,6 @@ nav {
     </div>
   </section>
 
-  <div style="background:var(--light-bg);padding:2rem 5rem 3rem;">
-    <div class="custom-pkg">
-      <div>
-        <h3>Need a Custom Package? 🎯</h3>
-        <p>Don't see exactly what you need? We build bespoke packages tailored precisely to your event, budget, and vision.</p>
-      </div>
-      <a href="#" class="btn-primary" onclick="showPage('quote');return false;" style="white-space:nowrap">Request Custom Quote <span style="font-size:0.7em;vertical-align:middle;opacity:0.9;">▼</span></a>
-    </div>
-  </div>
 </div><!-- /CONTACT -->
 
 
@@ -2326,15 +2295,6 @@ nav {
   </section>
 
 
-  <div style="background:var(--light-bg);padding:2rem 5rem 3rem;">
-    <div class="custom-pkg">
-      <div>
-        <h3>Need a Custom Package? 🎯</h3>
-        <p>Don't see exactly what you need? We build bespoke packages tailored precisely to your event, budget, and vision.</p>
-      </div>
-      <a href="#" class="btn-primary" onclick="showPage('quote');return false;" style="white-space:nowrap">Request Custom Quote <span style="font-size:0.7em;vertical-align:middle;opacity:0.9;">▼</span></a>
-    </div>
-  </div>
 </div><!-- /QUOTE PAGE -->
 
 <!-- ============================================================ -->
@@ -2426,7 +2386,7 @@ nav {
           <div style="font-size:1.5rem;margin-bottom:0.7rem;">📧</div>
           <h4 style="font-size:1rem;font-weight:800;color:var(--text-dark);margin-bottom:0.4rem;">Email Us the Profile</h4>
           <p style="font-size:0.85rem;color:var(--text-gray);line-height:1.6;margin-bottom:1rem;">Prefer we send it directly to your inbox? Drop your email and we'll send it along with our current offers.</p>
-          <a href="/cdn-cgi/l/email-protection#0e676068614e666b63617c6f687c677f6f206d6163317d7b6c646b6d7a335e7c616867626b2e5c6b7f7b6b7d7a" class="btn-primary" style="text-decoration:none;font-size:0.85rem;padding:0.7rem 1.4rem;">Request via Email</a>
+          <a href="/cdn-cgi/l/email-protection#e0898e868fa088858d8f92818692899181ce838f8d" class="btn-primary" style="text-decoration:none;font-size:0.85rem;padding:0.7rem 1.4rem;">Request via Email</a>
         </div>
         <div style="background:var(--white);border-radius:16px;padding:2rem;box-shadow:0 2px 16px rgba(0,0,0,0.06);">
           <div style="font-size:1.5rem;margin-bottom:0.7rem;">💬</div>
@@ -2441,16 +2401,147 @@ nav {
 
 
 
-  <div style="background:var(--light-bg);padding:2rem 5rem 3rem;">
-    <div class="custom-pkg">
-      <div>
-        <h3>Need a Custom Package? 🎯</h3>
-        <p>Don't see exactly what you need? We build bespoke packages tailored precisely to your event, budget, and vision.</p>
-      </div>
-      <a href="#" class="btn-primary" onclick="showPage('quote');return false;" style="white-space:nowrap">Request Custom Quote <span style="font-size:0.7em;vertical-align:middle;opacity:0.9;">▼</span></a>
-    </div>
-  </div>
 </div><!-- /PROFILE PAGE -->
 
-</body>
-</html>
+<!-- ============================================================ -->
+<!-- SITE FOOTER -->
+<!-- ============================================================ -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <h3 style="font-size:1.3rem;font-weight:900;color:var(--white);margin-bottom:0.8rem;letter-spacing:0.02em;">We are Social</h3>
+      <p>From intimate gatherings to grand concerts, we transform ideas into unforgettable experiences. Every detail matters, and every moment is crafted to be extraordinary. Explore our work and connect with us through the links below.</p>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/hemorafriqa" target="_blank" class="social-btn" title="Facebook"><img src="images/social/facebook.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/hemorafriqa" target="_blank" class="social-btn" title="Instagram"><img src="images/social/instagram.png" alt="Instagram"></a>
+        <a href="https://wa.me/254715043810" target="_blank" class="social-btn" title="WhatsApp"><img src="images/social/whatsapp.png" alt="WhatsApp"></a>
+        <a href="https://www.tiktok.com/@hemorafriqa" target="_blank" class="social-btn" title="TikTok"><img src="images/social/tiktok.png" alt="TikTok"></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li onclick="showPage('about')">About Us</li>
+        <li onclick="showPage('gallery')">Gallery</li>
+        <li onclick="showPage('testimonials')">Testimonials</li>
+        <li onclick="showPage('profile')">Company Profile</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li onclick="showPage('home')">Event Management</li>
+        <li onclick="showPage('home')">Sound & Lighting</li>
+        <li onclick="showPage('home')">Tent & Staging</li>
+        <li onclick="showPage('home')">Branding & Merch</li>
+      </ul>
+    </div>
+    <div class="footer-col
+<!-- Back to Top Button -->
+<div id="backToTop" title="Back to Top">
+  <div id="backToTopCircle">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000035" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </div>
+  <span id="backToTopLabel">BACK TO TOP</span>
+</div>
+
+<style>
+  #backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  #backToTopCircle {
+    width: 52px;
+    height: 52px;
+    background-color: #F5A623;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(245,166,35,0.5);
+    transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  }
+  #backToTopLabel {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: #F5A623;
+    text-transform: uppercase;
+    white-space: nowrap;
+    width: 52px;
+    text-align: center;
+    display: block;
+  }
+  #backToTop:hover #backToTopCircle {
+    background-color: #E09010;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(245,166,35,0.65);
+  }
+  #backToTop:hover #backToTopLabel {
+    color: #E09010;
+  }
+  #backToTop.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Mobile: bottom center */
+  @media (max-width: 768px) {
+    #backToTop {
+      right: 50%;
+      transform: translateX(50%);
+      bottom: 24px;
+    }
+    #backToTop:hover #backToTopCircle {
+      transform: translateY(-3px);
+    }
+  }
+  #backToTop.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Mobile: bottom center */
+  @media (max-width: 768px) {
+    #backToTop {
+      right: 50%;
+      transform: translateX(50%);
+      bottom: 24px;
+    }
+    #backToTop:hover {
+      transform: translateX(50%) translateY(-3px);
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const btn = document.getElementById('backToTop');
+    if (!btn) return;
+
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 300) {
+        btn.classList.add('show');
+      } else {
+        btn.classList.remove('show');
+      }
+    });
+
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+</script>
